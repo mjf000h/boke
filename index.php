@@ -1,0 +1,17 @@
+<?php
+    $user=$_GET["user"];
+    $pass=$_GET["pass"];
+    if($user=="admin"){
+        if($pass==12345){
+            include_once("index.html");
+        }
+        else{
+            $mess="密码错误";
+            $url="deng.html";
+            include_once("cuo.html");
+        }
+    }else{
+        $mess="账号错误";
+        $url="deng.html";
+        include_once("cuo.html");
+    }

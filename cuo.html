@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="js/rem.js"></script>
+    <style>
+        main{
+            width:80%;
+            height:50%;
+            border-radius: 0.4rem;
+            box-shadow: 0 0 0.3rem rgba(0,0,0,0.6);
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        span{
+            font-size: 40px;
+            color: red;
+        }
+        div{
+            font-size: 0.12rem;
+        }
+        p{
+            font-size: 0.2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <p><?php echo $mess?></p>
+        <span>3</span>
+        <div>秒后自动返回，<a href="<?php echo $url?>">点击立即返回</a></div>
+    </main>
+</body>
+</html>
+<script>
+    var s=3;
+    var span=document.querySelector("span");
+    function fn() {
+        s--;
+        span.innerText=s;
+        if(s==0){
+            location.href="deng.html";
+        }
+    }
+    let t=setInterval(fn,1000);
+</script>
